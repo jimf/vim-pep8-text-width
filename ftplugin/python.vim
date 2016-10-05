@@ -24,7 +24,7 @@ augroup END
 function! s:GetCurrentTextWidth()
     let curr_syntax = synIDattr(synIDtrans(synID(line("."), col("."), 0)), "name")
     let prev_syntax = synIDattr(synIDtrans(synID(line("."), col(".")-1, 0)), "name")
-    if curr_syntax =~ 'Comment\|Constant' || prev_syntax =~ 'Comment\|Constant'
+    if curr_syntax =~ 'Comment\|Constant\|String' || prev_syntax =~ 'Comment\|Constant\|String'
         return g:pep8_comment_text_width
     endif
 
